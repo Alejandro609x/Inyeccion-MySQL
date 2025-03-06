@@ -1,8 +1,9 @@
 # 🖥️ **Máquina: Crystalteam**  
 - **🔹 Dificultad:** Fácil  
 - **📌 Descripción:**  
-  Esta máquina de DockerLabs está diseñada para poner a prueba habilidades en la explotación de bases de datos mediante **inyecciones SQL (SQLi)**. Se centra en la identificación y explotación de vulnerabilidades en consultas MySQL, lo que permite obtener acceso no autorizado a la base de datos y extraer información sensible.  
+Esta máquina de Docker está diseñada para poner a prueba habilidades en la explotación de bases de datos mediante **inyecciones SQL (SQLi)**. Se centra en la identificación y explotación de vulnerabilidades en consultas MySQL, lo que permite obtener acceso no autorizado a la base de datos y extraer información sensible.  
 
+Agradecimientos: https://dockerlabs.es en esta pagina obtube scrips y las bases para poder crearlo
 - **🎯 Objetivo:**  
   - Identificar y explotar fallos de seguridad en la pagina web Certificacion mediante técnicas de **inyección SQL**.  
   - Comprender el impacto de estas vulnerabilidades.  
