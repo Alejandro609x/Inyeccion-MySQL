@@ -1,3 +1,7 @@
+Aquí está tu *write-up* mejorado, pero respetando los enlaces de tus imágenes. Ahora es más estructurado y fácil de leer.  
+
+---
+
 # 🖥️ **Máquina: Crystalteam**  
 🔹 **Dificultad:** Fácil  
 📌 **Descripción:**  
@@ -32,6 +36,8 @@ Una vez iniciada, comprueba la conexión con:
 ping -c4 172.17.0.2
 ```
 
+![Máquina Backend](/Img/Docker.jpeg)
+
 ### 3️⃣ **Reconocimiento Inicial con Nmap**  
 Realizamos un escaneo de puertos con:  
 
@@ -50,7 +56,10 @@ Luego, realizamos un análisis detallado de los servicios en ejecución:
 ```bash
 nmap -p22,80 -sCV 172.17.0.2 -oN target
 ```
+
 📌 **Resultado:** Identificamos el puerto **22 (SSH)** y el **80 (HTTP)**, lo que nos sugiere que hay un sitio web corriendo.  
+
+![Máquina Backend](/Img/Puertos.jpeg)
 
 ---
 
@@ -68,7 +77,13 @@ Recopilamos información con **WhatWeb** para detectar tecnologías usadas:
 whatweb 172.17.0.2
 ```
 
+![Máquina Backend](/Img/whatweb.jpeg)
+
 Al ingresar a la página web, encontramos un **formulario de inicio de sesión y registro**.  
+
+![Máquina Backend](/Img/index.jpeg)  
+
+![Máquina Backend](/Img/ad.jpeg)  
 
 Para descubrir directorios ocultos, utilizamos **Gobuster**:  
 
@@ -84,6 +99,10 @@ gobuster vhost -u http://172.17.0.2/Certificacion -w /usr/share/seclists/Discove
 
 📌 **Resultado:** No se encontraron subdominios o directorios relevantes.  
 
+![Máquina Backend](/Img/domi.jpeg)  
+
+![Máquina Backend](/Img/php.jpeg)  
+
 ---
 
 ## 🔥 **Explotación - Inyección SQL**  
@@ -96,6 +115,10 @@ admin'
 
 📌 **Resultado:** Se genera un **error de base de datos**, confirmando la vulnerabilidad.  
 
+![Máquina Backend](/Img/in.jpeg)  
+
+![Máquina Backend](/Img/error.jpeg)  
+
 Usamos **Burp Suite** para interceptar la solicitud y guardarla en un archivo `.req`.  
 
 Ejecutamos **SQLMap** para extraer datos sensibles:  
@@ -104,7 +127,11 @@ Ejecutamos **SQLMap** para extraer datos sensibles:
 sqlmap -r peticione.req --level=5 --risk=3 --dump
 ```
 
+![Máquina Backend](/Img/sql.jpeg)  
+
 📌 **Resultado:** Encontramos una base de datos llamada **inicio**, con nombres de usuario y contraseñas.  
+
+![Máquina Backend](/Img/Tabla.jpeg)  
 
 Usamos las credenciales para intentar acceder por **SSH**:  
 
@@ -113,6 +140,8 @@ ssh alejandro@172.17.0.2 -p 22
 ```
 
 📌 **Acceso concedido como usuario "alejandro".**  
+
+![Máquina Backend](/Img/ssh.jpeg)  
 
 ---
 
@@ -132,6 +161,8 @@ Ejecutamos el siguiente comando para leer el archivo `redflag.txt`:
 sudo python3 -c "print(open('redflag.txt').read())"
 ```
 
+![Máquina Backend](/Img/root.jpeg)  
+
 📌 **Resultado:** ¡Hemos obtenido la *redflag*! 🎉  
 
 Para verificar acceso como *root*, ejecutamos:  
@@ -139,6 +170,8 @@ Para verificar acceso como *root*, ejecutamos:
 ```bash
 su -
 ```
+
+![Máquina Backend](/Img/ter.jpeg)  
 
 📌 **Resultado:** **Acceso total a la máquina.**  
 
@@ -155,4 +188,6 @@ su -
 🚨 **No** concatenar consultas SQL sin sanitizar entradas.  
 🔐 Implementar **hashing de contraseñas** en la base de datos.  
 📛 Restringir permisos innecesarios a usuarios del sistema.  
+
+💡 **¿Te gustaría probar esta máquina?** Descárgala y cuéntame tu experiencia. 🚀  
 
