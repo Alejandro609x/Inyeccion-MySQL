@@ -1,7 +1,3 @@
-Aquí está tu *write-up* mejorado, pero respetando los enlaces de tus imágenes. Ahora es más estructurado y fácil de leer.  
-
----
-
 # 🖥️ **Máquina: Crystalteam**  
 🔹 **Dificultad:** Fácil  
 📌 **Descripción:**  
