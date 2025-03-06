@@ -13,7 +13,7 @@ Crystalteam es una máquina vulnerable basada en Docker, diseñada para poner a 
 
 ---
 
-## 🚀 **Despliegue de la Máquina Backend en DockerLabs**  
+## 🚀 **Despliegue de la Máquina**  
 
 ### 1️⃣ **Descargar el Archivo**  
 Descarga el archivo desde el siguiente enlace:  
