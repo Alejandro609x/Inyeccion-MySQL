@@ -1,5 +1,7 @@
 # 🖥️ **Máquina: Crystalteam**  
+
 🔹 **Dificultad:** Medio
+
 📌 **Descripción:**  
 Crystalteam es una máquina vulnerable basada en Docker, diseñada para poner a prueba habilidades en la explotación de bases de datos mediante **inyecciones SQL (SQLi)**. Su enfoque principal es la identificación y explotación de vulnerabilidades en consultas MySQL para obtener acceso no autorizado a la base de datos y extraer información sensible.  
 
