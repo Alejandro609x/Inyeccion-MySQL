@@ -95,7 +95,20 @@ Para buscar subdominios:
 gobuster vhost -u http://172.17.0.2/Certificacion -w /usr/share/seclists/Discovery/web-Content/directory-list-2.3-medium.txt -t 20 | grep -v "402"
 ```
 
-📌 **Resultado:** No se encontraron subdominios o directorios relevantes.  
+
+
+📌 **Resultado:** No se encontraron subdominios o directorios relevantes,.  
+Aquí tienes una forma clara y bien redactada de expresar esa **nota de solución**:
+
+---
+
+📌 **Nota de solución:**
+Para encontrar el directorio oculto, es necesario transformar la **primera letra de cada palabra del diccionario `rockyou.txt` a mayúscula**. Esto se debe a que el directorio en el servidor tiene un formato que comienza con mayúscula (por ejemplo, `/Certificacion` en lugar de `/certificacion`).
+Una vez modificado el diccionario, puedes usarlo con `gobuster` de la siguiente manera:
+
+```bash
+gobuster dir -u http://172.17.0.2/ -w rockyou_capitalized.txt -t 20
+```
 
 ![Máquina Backend](/Img/domi.jpeg)  
 
