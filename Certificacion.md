@@ -7,6 +7,9 @@ Crystalteam es una máquina vulnerable basada en Docker, diseñada para poner a 
 
 📢 **Agradecimientos:** Gracias a [DockerLabs](https://dockerlabs.es) por proporcionar *scripts* y bases que facilitaron la creación de esta máquina.  
 
+![Máquina Backend](/Img/2025-05-24_04-26.png)
+
+---
 📌 **Nota de solución:**
 Para encontrar el directorio oculto, es necesario transformar la **primera letra de cada palabra del diccionario `rockyou.txt` a mayúscula**. Esto se debe a que el directorio en el servidor tiene un formato que comienza con mayúscula (por ejemplo, `/Certificacion` en lugar de `/certificacion`).
 Una vez modificado el diccionario, puedes usarlo con `gobuster` de la siguiente manera:
